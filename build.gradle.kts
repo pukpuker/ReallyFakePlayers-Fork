@@ -12,10 +12,8 @@ description = "Simulates next-level fake players on a minecraft server."
 
 repositories {
     mavenCentral()
-    maven(url = uri("https://repo.opencollab.dev/maven-snapshots/"))
     maven(url = uri("https://repo.opencollab.dev/maven-releases/"))
     maven(url = uri("https://jitpack.io"))
-    maven(url = uri("https://litarvan.github.io/maven"))
 }
 
 dependencies {
