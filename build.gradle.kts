@@ -3,7 +3,7 @@ import net.minecrell.pluginyml.paper.PaperPluginDescription
 
 plugins {
     id("java")
-    id("io.papermc.paperweight.userdev") version "1.5.11"
+    id("io.papermc.paperweight.userdev") version "1.7.1"
     id("net.minecrell.plugin-yml.paper") version "0.6.0"
 }
 
@@ -12,12 +12,14 @@ description = "Simulates next-level fake players on a minecraft server."
 
 repositories {
     mavenCentral()
+    maven(url = uri("https://repo.opencollab.dev/maven-snapshots/"))
     maven(url = uri("https://repo.opencollab.dev/maven-releases/"))
     maven(url = uri("https://jitpack.io"))
+    maven(url = uri("https://litarvan.github.io/maven"))
 }
 
 dependencies {
-    paperweight.paperDevBundle("1.20.4-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.20.5-R0.1-SNAPSHOT")
 
     compileOnly("org.jetbrains:annotations:24.1.0")
     compileOnly("org.projectlombok:lombok:1.18.30")
@@ -32,7 +34,7 @@ dependencies {
     paperLibrary("com.google.inject.extensions:guice-assistedinject:7.0.0")
     paperLibrary("org.javassist:javassist:3.30.2-GA")
     paperLibrary("net.bytebuddy:byte-buddy-agent:1.14.12")
-    paperLibrary("com.github.steveice10:mcprotocollib:1.20.4-1")
+    paperLibrary("com.github.rfresh2:MCProtocolLib:1.20.5-dev-SNAPSHOT")
     paperLibrary("dev.dejvokep:boosted-yaml-spigot:1.4")
     paperLibrary("xyz.jpenilla:reflection-remapper:0.1.0")
     paperLibrary("com.github.Revxrsal.Lamp:common:3.1.9")
