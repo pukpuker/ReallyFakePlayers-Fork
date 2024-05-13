@@ -65,6 +65,10 @@ paper {
 }
 
 tasks {
+    jar {
+        from("LICENSE_reallyfakeplayers")
+    }
+
     assemble {
         dependsOn(reobfJar)
     }
