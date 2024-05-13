@@ -25,10 +25,10 @@ import me.marlester.rfp.ReallyFakePlayers;
 import org.bukkit.Bukkit;
 
 /**
- * Class responsible for registering various event listeners related to fake player management.
- * This class holds references to different listener objects and provides a method to register
- * all these listeners with the Bukkit plugin manager. Each listener handles specific aspects of
- * fake player interaction within the game.
+ * Class responsible for registering various event listeners related to fake player management. This
+ * class holds references to different listener objects and provides a method to register all these
+ * listeners with the Bukkit plugin manager. Each listener handles specific aspects of fake player
+ * interaction within the game.
  */
 @RequiredArgsConstructor(onConstructor_ = {@Inject}, access = AccessLevel.PACKAGE)
 @Singleton
@@ -45,9 +45,8 @@ public class ListenersRegistrar {
   private final UpdateCheckListener updateCheckListener;
 
   /**
-   * Registers all listeners with the Bukkit plugin manager.
-   * This method ensures that each listener is activated and begins receiving the events
-   * they are designed to handle.
+   * Registers all listeners with the Bukkit plugin manager. This method ensures that each listener
+   * is activated and begins receiving the events they are designed to handle.
    */
   public void registerListeners() {
     var pluginManager = Bukkit.getPluginManager();

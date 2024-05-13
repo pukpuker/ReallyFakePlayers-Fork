@@ -52,7 +52,7 @@ public class RfpCommand {
   private final UpdateChecker updateChecker;
 
   @Subcommand("checkupdates")
-  public void checkUpdates(BukkitCommandActor actor) {
+  public void checxUpdates(BukkitCommandActor actor) {
     updateChecker.checkUpdates(actor.getSender());
   }
 

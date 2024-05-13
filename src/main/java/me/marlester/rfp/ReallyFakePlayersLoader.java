@@ -33,8 +33,7 @@ import org.eclipse.aether.repository.RemoteRepository;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * The loader class for ReallyFakePlayers.
- * Loads up plugin's libraries.
+ * The loader class for ReallyFakePlayers. Loads up plugin's libraries.
  */
 public class ReallyFakePlayersLoader implements PluginLoader {
 

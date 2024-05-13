@@ -40,9 +40,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
 /**
- * Class that has a single purpose for checking updates via curse api.
- * It doesn't check if config disabled update check on purpose,
- * so you should decide whether to do it first.
+ * Class that has a single purpose for checking updates via curse api. It doesn't check if config
+ * disabled update check on purpose, so you should decide whether to do it first.
  */
 @RequiredArgsConstructor(onConstructor_ = {@Inject}, access = AccessLevel.PACKAGE)
 @Singleton
@@ -67,8 +66,8 @@ public class UpdateChecker {
   private static int defaultProjectId = 873451;
 
   /**
-   * {@link #checkUpdates(CommandSender)} but the command sender
-   * is {@link Bukkit#getConsoleSender()}.
+   * {@link #checkUpdates(CommandSender)} but the command sender is
+   * {@link Bukkit#getConsoleSender()}.
    */
   public void checkUpdatesConsole() {
     checkUpdates(Bukkit.getConsoleSender());
@@ -77,8 +76,8 @@ public class UpdateChecker {
   /**
    * Checks for updates and reports to the specified CommandSender.
    *
-   * @param sender The CommandSender to whom the result of the update check will be reported.
-   * This can be any command sender, including a player or the console.
+   * @param sender The CommandSender to whom the result of the update check will be reported. This
+   *               can be any command sender, including a player or the console.
    */
   public void checkUpdates(CommandSender sender) {
     String plName = pl.getName();

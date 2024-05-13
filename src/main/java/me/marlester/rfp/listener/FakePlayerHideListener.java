@@ -31,10 +31,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 /**
- * Handles visibility of fake players during player join events.
- * It ensures that real players, upon joining the server, do not see fake players if the config
- * is set to hide them. This listener checks the configuration and acts accordingly, maintaining
- * the intended visibility of fake players.
+ * Handles visibility of fake players during player join events. It ensures that real players, upon
+ * joining the server, do not see fake players if the config is set to hide them. This listener
+ * checks the configuration and acts accordingly, maintaining the intended visibility of fake
+ * players.
  */
 @RequiredArgsConstructor(onConstructor_ = {@Inject}, access = AccessLevel.PACKAGE)
 @Singleton
@@ -46,10 +46,9 @@ public class FakePlayerHideListener implements Listener {
   private final YamlDocument config;
 
   /**
-   * Handles the {@link PlayerJoinEvent}.
-   * When a player joins, this method checks the configuration. If hiding fake players is enabled,
-   * it hides all fake players from the newly joined real player, unless the joining player is a
-   * fake player.
+   * Handles the {@link PlayerJoinEvent}. When a player joins, this method checks the configuration.
+   * If hiding fake players is enabled, it hides all fake players from the newly joined real player,
+   * unless the joining player is a fake player.
    *
    * @param e the {@link PlayerJoinEvent} event that is occurring.
    */

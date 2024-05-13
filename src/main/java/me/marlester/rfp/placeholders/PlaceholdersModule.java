@@ -45,7 +45,7 @@ public class PlaceholdersModule extends AbstractModule {
    * Provides a singleton instance of the internal placeholders expansion.
    *
    * @param creator The creator object responsible for generating the internal placeholders
-   * expansion.
+   *                expansion.
    * @return An Expansion instance representing the internal placeholders.
    */
   @Provides

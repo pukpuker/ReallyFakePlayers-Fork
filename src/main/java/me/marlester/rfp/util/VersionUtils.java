@@ -30,8 +30,7 @@ public class VersionUtils {
    *
    * @param v1 version "number 1"
    * @param v2 version "number 2"
-   * @return 1 if v2 is smaller,
-   * -1 if v1 is smaller, 0 if equal
+   * @return 1 if v2 is smaller, -1 if v1 is smaller, 0 if equal
    */
   public int versionCompare(String v1, String v2) {
     // vnum stores each numeric part of version

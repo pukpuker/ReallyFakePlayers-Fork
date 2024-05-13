@@ -35,17 +35,15 @@ public interface FakePlayer {
   String getName();
 
   /**
-   * Returns the UUID of this fake player.<br>
-   * Fake players' UUIDs are different from players' UUIDs, so a player with the same nick as a
-   * fake player will not have the same UUID.
+   * Returns the UUID of this fake player.<br> Fake players' UUIDs are different from players'
+   * UUIDs, so a player with the same nick as a fake player will not have the same UUID.
    *
    * @return Fake player's UUID.
    */
   UUID getUuid();
 
   /**
-   * Returns the {@link Player} of this fake player.<br>
-   * Might be null.
+   * Returns the {@link Player} of this fake player.<br> Might be null.
    *
    * @return Fake player's {@link Player}.
    */
@@ -59,9 +57,8 @@ public interface FakePlayer {
   void setPlayer(Player value);
 
   /**
-   * Returns the key of this fake player.<br>
-   * Key acts as a unique identifier of a fake player during an early login.
-   * It's being added to one of packets for a server-side identification.
+   * Returns the key of this fake player.<br> Key acts as a unique identifier of a fake player
+   * during an early login. It's being added to one of packets for a server-side identification.
    * Please don't do much stuff with this without a great reason.
    *
    * @return Fake player's key.
@@ -76,8 +73,8 @@ public interface FakePlayer {
   Session getClient();
 
   /**
-   * Returns a removed boolean.<br>
-   * It's determined by whether this fake player was removed or not BY THE PLUGIN.
+   * Returns a removed boolean.<br> It's determined by whether this fake player was removed or not
+   * BY THE PLUGIN.
    *
    * @return Fake player's removed boolean.
    */
@@ -96,9 +93,8 @@ public interface FakePlayer {
   void join();
 
   /**
-   * Removes this fake player from all the systems.
-   * Disconnects from server, removes from fake player lists, etc.
-   * Will not try to remove if already removed.
+   * Removes this fake player from all the systems. Disconnects from server, removes from fake
+   * player lists, etc. Will not try to remove if already removed.
    */
   void remove();
 }

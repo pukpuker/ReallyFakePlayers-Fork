@@ -40,8 +40,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
- * Dear plugin's main class. It starts all processes of the plugin, but
- * generally prefers not to do anything by itself, it uses other classes for it.
+ * Dear plugin's main class. It starts all processes of the plugin, but generally prefers not to do
+ * anything by itself, it uses other classes for it.
  */
 public final class ReallyFakePlayers extends JavaPlugin {
 

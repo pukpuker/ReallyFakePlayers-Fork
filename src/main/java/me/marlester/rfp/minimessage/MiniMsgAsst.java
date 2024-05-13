@@ -32,8 +32,8 @@ import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 /**
  * Assists in deserializing messages with MiniMessage syntax and placeholders.
  * <p>
- * This class provides methods to deserialize strings using MiniMessage format. It supports
- * global, audience-specific, and relational placeholders, provided by the internal expansion.
+ * This class provides methods to deserialize strings using MiniMessage format. It supports global,
+ * audience-specific, and relational placeholders, provided by the internal expansion.
  * </p>
  */
 @RequiredArgsConstructor(onConstructor_ = {@Inject}, access = AccessLevel.PACKAGE)
@@ -60,7 +60,7 @@ public class MiniMsgAsst {
   /**
    * Deserializes a string with audience-specific global placeholders.
    *
-   * @param input The string to be deserialized.
+   * @param input               The string to be deserialized.
    * @param placeholderAudience The audience for placeholders.
    * @return The deserialized {@link Component}.
    */
@@ -74,8 +74,8 @@ public class MiniMsgAsst {
   /**
    * Deserializes a string with relational placeholders for two audiences.
    *
-   * @param input The string to be deserialized.
-   * @param placeholderAudience The primary audience for placeholders.
+   * @param input                    The string to be deserialized.
+   * @param placeholderAudience      The primary audience for placeholders.
    * @param otherPlaceholderAudience The secondary audience for relational placeholders.
    * @return The deserialized {@link Component}.
    */
@@ -101,7 +101,7 @@ public class MiniMsgAsst {
   /**
    * Deserializes a string into plain text with audience-specific placeholders.
    *
-   * @param input The string to be deserialized.
+   * @param input               The string to be deserialized.
    * @param placeholderAudience The audience for placeholders.
    * @return The deserialized string in plain text.
    */
@@ -113,8 +113,8 @@ public class MiniMsgAsst {
   /**
    * Deserializes a string into plain text with relational placeholders for two audiences.
    *
-   * @param input The string to be deserialized.
-   * @param placeholderAudience The primary audience for placeholders.
+   * @param input                    The string to be deserialized.
+   * @param placeholderAudience      The primary audience for placeholders.
    * @param otherPlaceholderAudience The secondary audience for relational placeholders.
    * @return The deserialized string in plain text.
    */

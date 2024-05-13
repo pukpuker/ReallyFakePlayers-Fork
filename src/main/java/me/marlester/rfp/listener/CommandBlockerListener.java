@@ -45,8 +45,8 @@ public class CommandBlockerListener implements Listener {
   private final MiniMsgAsst miniMsgAsst;
 
   /**
-   * Listens to PlayerCommandPreprocessEvent and blocks commands containing names
-   * of online fake players if configured so.
+   * Listens to PlayerCommandPreprocessEvent and blocks commands containing names of online fake
+   * players if configured so.
    *
    * @param e the PlayerCommandPreprocessEvent event.
    */

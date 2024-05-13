@@ -32,16 +32,15 @@ public class PermUtils {
   public final String PERMISSIONS_PREFIX = "rfp.";
 
   /**
-   * Checks if the given CommandSender has a specific permission.
-   * This method appends the predefined plugin permission prefix to the permission key
-   * before checking the sender's permissions. Additionally, it checks if the sender
-   * is an operator (OP) in the game.
+   * Checks if the given CommandSender has a specific permission. This method appends the predefined
+   * plugin permission prefix to the permission key before checking the sender's permissions.
+   * Additionally, it checks if the sender is an operator (OP) in the game.
    *
    * @param permissionKey The specific permission key to be checked, without the plugin prefix.
-   * @param sender The CommandSender (player, console, command block, etc.) whose permission is
-   * being checked.
-   * @return {@code true} if the sender has the specified permission or is an operator,
-   * otherwise {@code false}.
+   * @param sender        The CommandSender (player, console, command block, etc.) whose permission
+   *                      is being checked.
+   * @return {@code true} if the sender has the specified permission or is an operator, otherwise
+   *     {@code false}.
    */
   public boolean hasPermission(String permissionKey, CommandSender sender) {
     return sender.hasPermission(PERMISSIONS_PREFIX + permissionKey) || sender.isOp();

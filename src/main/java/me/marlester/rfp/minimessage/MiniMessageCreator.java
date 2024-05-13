@@ -31,8 +31,8 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 public class MiniMessageCreator {
 
   /**
-   * Creates a new instance of {@link MiniMessage} (with custom settings or no).
-   * This single instance shall be used across the whole plugin.
+   * Creates a new instance of {@link MiniMessage} (with custom settings or no). This single
+   * instance shall be used across the whole plugin.
    *
    * @return a new {@link MiniMessage} instance.
    */

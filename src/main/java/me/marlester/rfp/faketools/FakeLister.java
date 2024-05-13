@@ -41,50 +41,44 @@ public class FakeLister {
 
   /**
    * <h3>What's the difference between the raw and usual fake player?</h3>
-   * - Usual fake players are fully initialized.
-   * - Raw fake players are not fully initialized,
-   * they lack in-game appearance and some nullable fields are not available in their object.<br>
-   * Raw fake players are also added IMMEDIATELY to raw fake player maps on their creation.
-   * Generally, for all (Craft)Player object related stuff use usual, otherwise think.
+   * - Usual fake players are fully initialized. - Raw fake players are not fully initialized, they
+   * lack in-game appearance and some nullable fields are not available in their object.<br> Raw
+   * fake players are also added IMMEDIATELY to raw fake player maps on their creation. Generally,
+   * for all (Craft)Player object related stuff use usual, otherwise think.
    * <br>
    * <br>
-   * A simple raw fake players list.<br>
-   * ⚠ Fakeplayer (data) is added here immediately on fakeplayer creation,
-   * you likely don't want it. ⚠<br>
+   * A simple raw fake players list.<br> ⚠ Fakeplayer (data) is added here immediately on fakeplayer
+   * creation, you likely don't want it. ⚠<br>
    */
   private final LinkedList<FakePlayer> rawFakePlayers = new LinkedList<>();
 
   /**
    * <h3>What's the difference between the raw and usual fake player?</h3>
-   * - Usual fake players are fully initialized.
-   * - Raw fake players are not fully initialized,
-   * they lack in-game appearance and some nullable fields are not available in their object.<br>
-   * Raw fake players are also added IMMEDIATELY to raw fake player maps on their creation.
-   * Generally, for all (Craft)Player object related stuff use usual, otherwise think.
+   * - Usual fake players are fully initialized. - Raw fake players are not fully initialized, they
+   * lack in-game appearance and some nullable fields are not available in their object.<br> Raw
+   * fake players are also added IMMEDIATELY to raw fake player maps on their creation. Generally,
+   * for all (Craft)Player object related stuff use usual, otherwise think.
    * <br>
    * <br>
-   * Key - fakeplayer's name, a string.<br>
-   * Value - fakeplayer's FakePlayer object.<br>
+   * Key - fakeplayer's name, a string.<br> Value - fakeplayer's FakePlayer object.<br>
    * <br>
-   * ⚠ Fakeplayer (data) is added here immediately on fakeplayer creation,
-   * you likely don't want it. ⚠<br>
+   * ⚠ Fakeplayer (data) is added here immediately on fakeplayer creation, you likely don't want it.
+   * ⚠<br>
    */
   private final Map<String, FakePlayer> rawFakePlayersByName = new HashMap<>();
 
   /**
    * <h3>What's the difference between the raw and usual fake player?</h3>
-   * - Usual fake players are fully initialized.
-   * - Raw fake players are not fully initialized,
-   * they lack in-game appearance and some nullable fields are not available in their object.<br>
-   * Raw fake players are also added IMMEDIATELY to raw fake player maps on their creation.
-   * Generally, for all (Craft)Player object related stuff use usual, otherwise think.
+   * - Usual fake players are fully initialized. - Raw fake players are not fully initialized, they
+   * lack in-game appearance and some nullable fields are not available in their object.<br> Raw
+   * fake players are also added IMMEDIATELY to raw fake player maps on their creation. Generally,
+   * for all (Craft)Player object related stuff use usual, otherwise think.
    * <br>
    * <br>
-   * Key - fakeplayer's uuid, a UUID object.<br>
-   * Value - fakeplayer's FakePlayer object.<br>
+   * Key - fakeplayer's uuid, a UUID object.<br> Value - fakeplayer's FakePlayer object.<br>
    * <br>
-   * ⚠ Fakeplayer (data) is added here immediately on fakeplayer creation,
-   * you likely don't want it. ⚠<br>
+   * ⚠ Fakeplayer (data) is added here immediately on fakeplayer creation, you likely don't want it.
+   * ⚠<br>
    */
   private final Map<UUID, FakePlayer> rawFakePlayersByUuid = new HashMap<>();
 
@@ -96,29 +90,25 @@ public class FakeLister {
   private final LinkedList<FakePlayer> fakePlayers = new LinkedList<>();
 
   /**
-   * Key - fakeplayer's name, a string.<br>
-   * Value - fakeplayer's FakePlayer object.<br>
+   * Key - fakeplayer's name, a string.<br> Value - fakeplayer's FakePlayer object.<br>
    * <br>
    * Fakeplayer (data) is added here when they are fully initialized, so with delay.<br>
    */
   private final Map<String, FakePlayer> fakePlayersByName = new HashMap<>();
 
   /**
-   * Key - fakeplayer's uuid, a UUID object.<br>
-   * Value - fakeplayer's FakePlayer object.<br>
+   * Key - fakeplayer's uuid, a UUID object.<br> Value - fakeplayer's FakePlayer object.<br>
    * <br>
    * Fakeplayer (data) is added here when they are fully initialized, so with delay.<br>
    */
   private final Map<UUID, FakePlayer> fakePlayersByUuid = new HashMap<>();
 
   /**
-   * Key - fakeplayer's key, a UUID object.<br>
-   * Value - fakeplayer's uuid, a UUID object.<br>
+   * Key - fakeplayer's key, a UUID object.<br> Value - fakeplayer's uuid, a UUID object.<br>
    * <br>
-   * ⚠ Managed by the secret class ⚠<br>
-   * ⚠ Fake players' data gets added and deleted from here constantly ⚠<br>
-   * ⚠ Fakeplayer (data) is added here immediately on fakeplayer creation,
-   * you likely don't want it. ⚠<br>
+   * ⚠ Managed by the secret class ⚠<br> ⚠ Fake players' data gets added and deleted from here
+   * constantly ⚠<br> ⚠ Fakeplayer (data) is added here immediately on fakeplayer creation, you
+   * likely don't want it. ⚠<br>
    */
   private final Map<UUID, UUID> fakePlayerUuidsByKey;
 
@@ -141,8 +131,8 @@ public class FakeLister {
   }
 
   /**
-   * ⚠ FAKE PLAYERS MAY BE NOT FULLY INITIALIZED AT THE MOMENT OF A CHECK ⚠<br>
-   * Checks if online fake player has a given uuid.
+   * ⚠ FAKE PLAYERS MAY BE NOT FULLY INITIALIZED AT THE MOMENT OF A CHECK ⚠<br> Checks if online
+   * fake player has a given uuid.
    *
    * @param uuid uuid you want to try,
    * @return true if found online fake player with that name, false if not.

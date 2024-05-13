@@ -37,9 +37,9 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerLoginPacketListenerImpl;
 
 /**
- * Responsible for editing login listener behavior in PaperMC. This class
- * modifies the server's packet handling to allow for authentication and uuid change of fake
- * players using a unique approach.
+ * Responsible for editing login listener behavior in PaperMC. This class modifies the server's
+ * packet handling to allow for authentication and uuid change of fake players using a unique
+ * approach.
  */
 @RequiredArgsConstructor(onConstructor_ = {@Inject}, access = AccessLevel.PACKAGE)
 @Singleton
@@ -50,10 +50,9 @@ public class LoginListenerEditor {
   private final String pluginName;
 
   /**
-   * Starts the editing process of the server's login listener. It modifies the
-   * behavior of packet handling for player authentication, integrating checks
-   * against fake players, and changing uuids. The method dynamically alters
-   * the bytecode to implement the desired functionality.
+   * Starts the editing process of the server's login listener. It modifies the behavior of packet
+   * handling for player authentication, integrating checks against fake players, and changing
+   * uuids. The method dynamically alters the bytecode to implement the desired functionality.
    */
   @SneakyThrows
   public void startEditing() {

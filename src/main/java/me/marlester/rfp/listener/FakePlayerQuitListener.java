@@ -28,10 +28,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 /**
- * Listens to player quit events to manage the removal of fake players from the game.
- * This class is responsible for detecting when a fake player leaves the game and performs
- * necessary cleanup actions. It ensures that the fake player's data is appropriately handled
- * upon their exit.
+ * Listens to player quit events to manage the removal of fake players from the game. This class is
+ * responsible for detecting when a fake player leaves the game and performs necessary cleanup
+ * actions. It ensures that the fake player's data is appropriately handled upon their exit.
  */
 @RequiredArgsConstructor(onConstructor_ = {@Inject}, access = AccessLevel.PACKAGE)
 @Singleton
@@ -40,9 +39,9 @@ public class FakePlayerQuitListener implements Listener {
   private final FakeLister fakeLister;
 
   /**
-   * Handles the {@link PlayerQuitEvent}.
-   * When a player quits, this method checks if the player is a fake player. If so, it proceeds
-   * to remove the fake player, performing necessary cleanup operations.
+   * Handles the {@link PlayerQuitEvent}. When a player quits, this method checks if the player is a
+   * fake player. If so, it proceeds to remove the fake player, performing necessary cleanup
+   * operations.
    *
    * @param e the player quit event.
    */

@@ -25,9 +25,9 @@ import lombok.Getter;
 import me.marlester.rfp.config.NameListYml;
 
 /**
- * A singleton class responsible for generating fake names.
- * This class relies on {@link FakeLister} to ensure uniqueness of names among fake players.
- * It also uses {@link NameListYml} to retrieve and store a list of names.
+ * A singleton class responsible for generating fake names. This class relies on {@link FakeLister}
+ * to ensure uniqueness of names among fake players. It also uses {@link NameListYml} to retrieve
+ * and store a list of names.
  */
 @Singleton
 public class FakeNamer {
@@ -50,8 +50,8 @@ public class FakeNamer {
   }
 
   /**
-   * Retrieves a random, unique name from the list of names.
-   * This method ensures that the returned name is not already used by any existing fake player.
+   * Retrieves a random, unique name from the list of names. This method ensures that the returned
+   * name is not already used by any existing fake player.
    *
    * @return a unique random name as a {@link String}.
    */

@@ -54,8 +54,7 @@ public class WelcomeListener implements Listener {
   private final List<FakePlayer> welcomers = new ArrayList<>();
 
   /**
-   * Listens to PlayerJoinEvent and gets some random fake player to welcome them
-   * if configured so.
+   * Listens to PlayerJoinEvent and gets some random fake player to welcome them if configured so.
    *
    * @param e the PlayerJoinEvent.
    */

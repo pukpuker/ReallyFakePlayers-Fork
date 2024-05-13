@@ -39,11 +39,10 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 /**
- * Handles the joining process of fake players into the game.
- * This class is responsible for setting up fake players when they join the game, including hiding
- * them from real players, applying various effects and configurations, and handling their
- * interactions with the game world. It also ensures that once a fake player has joined,
- * the listener is unregistered.
+ * Handles the joining process of fake players into the game. This class is responsible for setting
+ * up fake players when they join the game, including hiding them from real players, applying
+ * various effects and configurations, and handling their interactions with the game world. It also
+ * ensures that once a fake player has joined, the listener is unregistered.
  */
 @RequiredArgsConstructor(onConstructor_ = {@AssistedInject}, access = AccessLevel.PACKAGE)
 public class FakePlayerJoinListener implements Listener {
@@ -60,9 +59,9 @@ public class FakePlayerJoinListener implements Listener {
   private final FakePlayer fakePlayer;
 
   /**
-   * Manages actions upon a fake player's join event.
-   * Sets up the fake player upon joining by applying necessary configurations and effects.
-   * Unregisters the listener post setup to avoid redundant interactions.
+   * Manages actions upon a fake player's join event. Sets up the fake player upon joining by
+   * applying necessary configurations and effects. Unregisters the listener post setup to avoid
+   * redundant interactions.
    *
    * @param e the player join event.
    */
@@ -142,8 +141,8 @@ public class FakePlayerJoinListener implements Listener {
   }
 
   /**
-   * Unregisters the listener to stop receiving join events.
-   * Typically called after the fake player has joined and is fully set up.
+   * Unregisters the listener to stop receiving join events. Typically called after the fake player
+   * has joined and is fully set up.
    */
   public void stopListening() {
     PlayerJoinEvent.getHandlerList().unregister(this);

@@ -23,23 +23,21 @@ import lombok.experimental.UtilityClass;
 import net.minecraft.core.UUIDUtil;
 
 /**
- * Utility class with the purpose of creating distinct UUIDS for fakeplayers.
- * Similar to {@link UUIDUtil}.
+ * Utility class with the purpose of creating distinct UUIDS for fakeplayers. Similar to
+ * {@link UUIDUtil}.
  */
 @UtilityClass
 public class FakePlayerUuidUtil {
 
   /**
-   * Will be used like ReallyFakePlayer:nickname in the creation of a UUID via bytes from
-   * the string, since it uses set bytes, the UUID gotten is always the same as long as
-   * the nickname is the same. It functions similar to minecraft's {@link UUIDUtil}, but
-   * gives different UUIDs.
+   * Will be used like ReallyFakePlayer:nickname in the creation of a UUID via bytes from the
+   * string, since it uses set bytes, the UUID gotten is always the same as long as the nickname is
+   * the same. It functions similar to minecraft's {@link UUIDUtil}, but gives different UUIDs.
    */
   public final String UUID_PREFIX_FAKE_PLAYER = "ReallyFakePlayer:";
 
   /**
-   * Creates a UUID for a fake player.
-   * Different from existing minecraft offline/online UUIDs.
+   * Creates a UUID for a fake player. Different from existing minecraft offline/online UUIDs.
    *
    * @param nickname Name of a fake player
    * @return UUID for a fake player.

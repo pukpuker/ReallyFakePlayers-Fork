@@ -42,8 +42,8 @@ public class SpawnLocationListener implements Listener {
   private final YamlDocument config;
 
   /**
-   * Listens to PlayerSpawnLocationEvent, if a fake player then change spawn
-   * location to the one from config if it's present.
+   * Listens to PlayerSpawnLocationEvent, if a fake player then change spawn location to the one
+   * from config if it's present.
    *
    * @param e the PlayerSpawnLocationEvent
    */

@@ -41,8 +41,8 @@ public class UpdateCheckListener implements Listener {
   private final YamlDocument config;
 
   /**
-   * Listens to PlayerJoinEvent, if the feature is enabled it checks if the player
-   * is an admin and notifies the admin about any updates if so.
+   * Listens to PlayerJoinEvent, if the feature is enabled it checks if the player is an admin and
+   * notifies the admin about any updates if so.
    *
    * @param e the PlayerJoinEvent.
    */

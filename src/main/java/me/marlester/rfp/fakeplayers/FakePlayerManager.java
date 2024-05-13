@@ -28,9 +28,9 @@ import me.marlester.rfp.faketools.FakeNamer;
 import org.jetbrains.annotations.ApiStatus;
 
 /**
- * Class for managing those pesky fake players. It's like playing god, but with less thunder.
- * This baby handles everything from adding to removing those virtual wannabes.
- * Don't get too excited, it's not rocket science, just some fake players in a digital playground.
+ * Class for managing those pesky fake players. It's like playing god, but with less thunder. This
+ * baby handles everything from adding to removing those virtual wannabes. Don't get too excited,
+ * it's not rocket science, just some fake players in a digital playground.
  */
 @RequiredArgsConstructor(onConstructor_ = {@Inject}, access = AccessLevel.PACKAGE)
 @Singleton
@@ -46,7 +46,7 @@ public class FakePlayerManager {
    * Adds a fake player. It's like inviting an imaginary friend to your party.
    *
    * @param name The name of the fake player. It must meet the Minecraft Java profile name
-   * requirements. Stick to their rules or no dice.
+   *             requirements. Stick to their rules or no dice.
    */
   public void add(String name) {
     int maximum = config.getInt("max-fake-players");
@@ -57,11 +57,11 @@ public class FakePlayerManager {
   }
 
   /**
-   * Adds a number of fake players. Because the more, the merrier, right?
-   * Their names are being acquired via the grand {@link FakeNamer}.
+   * Adds a number of fake players. Because the more, the merrier, right? Their names are being
+   * acquired via the grand {@link FakeNamer}.
    *
-   * @param number How many fake friends you want to add. Keep it positive, and
-   * within the bounds of sanity.
+   * @param number How many fake friends you want to add. Keep it positive, and within the bounds of
+   *               sanity.
    * @see FakeNamer#getRandomName() FakeNamer's name getting procedure.
    */
   public void addNumber(int number) {
@@ -72,12 +72,11 @@ public class FakePlayerManager {
   }
 
   /**
-   * Why keep a fake player around when you can zap 'em out of existence, right?
-   * This little method does exactly that. Poof! Gone! Just like my sense of responsibility
-   * on a Friday night.
+   * Why keep a fake player around when you can zap 'em out of existence, right? This little method
+   * does exactly that. Poof! Gone! Just like my sense of responsibility on a Friday night.
    *
-   * @param fakePlayer The wannabe player you're itching to get rid of. Don't get sentimental,
-   * it's just a bunch of code.
+   * @param fakePlayer The wannabe player you're itching to get rid of. Don't get sentimental, it's
+   *                   just a bunch of code.
    * @see FakePlayer#remove()
    */
   @ApiStatus.Obsolete
@@ -88,8 +87,8 @@ public class FakePlayerManager {
   /**
    * It's like wielding a Death Note for fake players. Write a name, and poof! They're gone.
    *
-   * @param name The name of the fake player you want to send into the oblivion. Say goodbye,
-   * or don't. It's just a fake player after all!
+   * @param name The name of the fake player you want to send into the oblivion. Say goodbye, or
+   *             don't. It's just a fake player after all!
    * @see FakePlayer#remove()
    */
   public void remove(String name) {
@@ -98,8 +97,8 @@ public class FakePlayerManager {
 
   /**
    * Initiates a methodical purge of all fake players. Think of it as a systematic extermination,
-   * but less grim. Starting from the oldest (who probably remember the dial-up era) and moving
-   * to the newest, this method wipes them out one by one. It's like a reverse chronology of
+   * but less grim. Starting from the oldest (who probably remember the dial-up era) and moving to
+   * the newest, this method wipes them out one by one. It's like a reverse chronology of
    * annihilation.
    *
    * @see FakePlayer#remove()
@@ -115,8 +114,8 @@ public class FakePlayerManager {
    * Obliterates a specified number of the oldest fake players. It's like a time machine of
    * destruction, starting from the oldest and moving forward.
    *
-   * @param number The number of ancient fake players you want to send to the digital beyond.
-   * Keep it positive, and within the realm of reason.
+   * @param number The number of ancient fake players you want to send to the digital beyond. Keep
+   *               it positive, and within the realm of reason.
    * @see FakePlayer#remove()
    */
   public void removeNumber(int number) {

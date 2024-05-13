@@ -44,9 +44,8 @@ public class FakePlayerGuardingListener implements Listener {
   private final FakeLister fakeLister;
 
   /**
-   * Handles the {@link ChatEvent}.
-   * If the event is cancelled and the player is a fake player, this method un-cancels the event,
-   * allowing the fake player to chat.
+   * Handles the {@link ChatEvent}. If the event is cancelled and the player is a fake player, this
+   * method un-cancels the event, allowing the fake player to chat.
    *
    * @param e the {@link ChatEvent} event that is occurring.
    */
@@ -58,9 +57,8 @@ public class FakePlayerGuardingListener implements Listener {
   }
 
   /**
-   * Handles the {@link PlayerCommandPreprocessEvent}.
-   * If the event is cancelled and the player is a fake player, this method un-cancels the event,
-   * allowing the fake player to process commands.
+   * Handles the {@link PlayerCommandPreprocessEvent}. If the event is cancelled and the player is a
+   * fake player, this method un-cancels the event, allowing the fake player to process commands.
    *
    * @param e the {@link PlayerCommandPreprocessEvent} event that is occurring.
    */
@@ -72,9 +70,8 @@ public class FakePlayerGuardingListener implements Listener {
   }
 
   /**
-   * Handles the {@link PlayerKickEvent}.
-   * If the event is not cancelled and the player is a fake player, this method cancels the event,
-   * preventing the fake player from being kicked.
+   * Handles the {@link PlayerKickEvent}. If the event is not cancelled and the player is a fake
+   * player, this method cancels the event, preventing the fake player from being kicked.
    *
    * @param e the {@link PlayerKickEvent} event that is occurring.
    */
@@ -86,9 +83,8 @@ public class FakePlayerGuardingListener implements Listener {
   }
 
   /**
-   * Handles the {@link PlayerLoginEvent}.
-   * If the result is not ALLOWED and the player is a fake player, this method alters the result to
-   * ALLOWED, permitting the fake player to log in.
+   * Handles the {@link PlayerLoginEvent}. If the result is not ALLOWED and the player is a fake
+   * player, this method alters the result to ALLOWED, permitting the fake player to log in.
    *
    * @param e the {@link PlayerLoginEvent} event that is occurring.
    */
@@ -101,9 +97,9 @@ public class FakePlayerGuardingListener implements Listener {
   }
 
   /**
-   * Handles the {@link PlayerPreLoginEvent}.
-   * If the login result is not ALLOWED and the player is identified as a fake player, this method
-   * changes the result to ALLOWED, allowing the fake player's pre-login process.
+   * Handles the {@link PlayerPreLoginEvent}. If the login result is not ALLOWED and the player is
+   * identified as a fake player, this method changes the result to ALLOWED, allowing the fake
+   * player's pre-login process.
    *
    * @param e the {@link PlayerPreLoginEvent} that is occurring.
    */

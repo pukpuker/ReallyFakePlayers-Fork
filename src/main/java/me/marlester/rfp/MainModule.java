@@ -24,8 +24,7 @@ import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
 
 /**
- * This is the main module of this plugin.
- * It provides some general things for the entire plugin.
+ * This is the main module of this plugin. It provides some general things for the entire plugin.
  */
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class MainModule extends AbstractModule {
