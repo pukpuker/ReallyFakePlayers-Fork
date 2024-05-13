@@ -23,7 +23,6 @@ import com.google.inject.name.Named;
 import dev.dejvokep.boostedyaml.YamlDocument;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
-import me.marlester.rfp.command.RfpCommand;
 import me.marlester.rfp.faketools.FakeLister;
 import me.marlester.rfp.minimessage.MiniMsgAsst;
 import me.marlester.rfp.util.PermUtils;

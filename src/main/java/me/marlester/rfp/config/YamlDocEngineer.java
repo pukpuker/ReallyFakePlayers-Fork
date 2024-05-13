@@ -53,7 +53,7 @@ public class YamlDocEngineer {
   /**
    * Creates a new YamlDocument.
    *
-   * @param name   name of the document.
+   * @param name name of the document.
    * @param update enable updater? updater should have a config-version option.
    */
   public YamlDocument create(String name, boolean update) throws IOException {

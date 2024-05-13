@@ -17,7 +17,6 @@
 
 package me.marlester.rfp.command;
 
-import com.google.common.primitives.Ints;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import dev.dejvokep.boostedyaml.YamlDocument;

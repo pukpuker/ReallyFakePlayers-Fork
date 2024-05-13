@@ -46,7 +46,7 @@ public class FakePlayerManager {
    * Adds a fake player. It's like inviting an imaginary friend to your party.
    *
    * @param name The name of the fake player. It must meet the Minecraft Java profile name
-   *             requirements. Stick to their rules or no dice.
+   * requirements. Stick to their rules or no dice.
    */
   public void add(String name) {
     int maximum = config.getInt("max-fake-players");
@@ -61,7 +61,7 @@ public class FakePlayerManager {
    * Their names are being acquired via the grand {@link FakeNamer}.
    *
    * @param number How many fake friends you want to add. Keep it positive, and
-   *               within the bounds of sanity.
+   * within the bounds of sanity.
    * @see FakeNamer#getRandomName() FakeNamer's name getting procedure.
    */
   public void addNumber(int number) {
@@ -77,7 +77,7 @@ public class FakePlayerManager {
    * on a Friday night.
    *
    * @param fakePlayer The wannabe player you're itching to get rid of. Don't get sentimental,
-   *                   it's just a bunch of code.
+   * it's just a bunch of code.
    * @see FakePlayer#remove()
    */
   @ApiStatus.Obsolete
@@ -89,7 +89,7 @@ public class FakePlayerManager {
    * It's like wielding a Death Note for fake players. Write a name, and poof! They're gone.
    *
    * @param name The name of the fake player you want to send into the oblivion. Say goodbye,
-   *             or don't. It's just a fake player after all!
+   * or don't. It's just a fake player after all!
    * @see FakePlayer#remove()
    */
   public void remove(String name) {
@@ -116,7 +116,7 @@ public class FakePlayerManager {
    * destruction, starting from the oldest and moving forward.
    *
    * @param number The number of ancient fake players you want to send to the digital beyond.
-   *               Keep it positive, and within the realm of reason.
+   * Keep it positive, and within the realm of reason.
    * @see FakePlayer#remove()
    */
   public void removeNumber(int number) {

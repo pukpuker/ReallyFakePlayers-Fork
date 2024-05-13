@@ -78,7 +78,7 @@ public class UpdateChecker {
    * Checks for updates and reports to the specified CommandSender.
    *
    * @param sender The CommandSender to whom the result of the update check will be reported.
-   *               This can be any command sender, including a player or the console.
+   * This can be any command sender, including a player or the console.
    */
   public void checkUpdates(CommandSender sender) {
     String plName = pl.getName();

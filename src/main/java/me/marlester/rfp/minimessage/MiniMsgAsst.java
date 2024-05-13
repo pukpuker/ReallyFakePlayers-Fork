@@ -80,7 +80,7 @@ public class MiniMsgAsst {
    * @return The deserialized {@link Component}.
    */
   public Component deserialize(String input, Audience placeholderAudience,
-      Audience otherPlaceholderAudience) {
+                               Audience otherPlaceholderAudience) {
     return miniMessage.deserialize(input,
         MiniPlaceholders.getRelationalGlobalPlaceholders(
             placeholderAudience, otherPlaceholderAudience),
@@ -119,7 +119,7 @@ public class MiniMsgAsst {
    * @return The deserialized string in plain text.
    */
   public String deserializeAsPlainText(String input, Audience placeholderAudience,
-      Audience otherPlaceholderAudience) {
+                                       Audience otherPlaceholderAudience) {
     return PlainTextComponentSerializer.plainText().serialize(deserialize(input,
         placeholderAudience, otherPlaceholderAudience));
   }

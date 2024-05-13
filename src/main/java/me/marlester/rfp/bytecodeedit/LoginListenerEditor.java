@@ -21,7 +21,6 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
 import java.lang.instrument.ClassDefinition;
-import java.lang.instrument.Instrumentation;
 import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.CtMethod;
@@ -78,32 +77,32 @@ public class LoginListenerEditor {
            * checking authentication, we also use optional game profile id as a key. highly VDP
            */
           String code = String.format("""
-              {
-                try {
-                  boolean isFakePlayer = false;
-                  java.util.UUID key = packet.%4$s();
-                  if (key != null) {
-                    Class secretClass = Class.forName("%2$s");
-                    java.util.Map fakePlayerUuidsByKey = (java.util.Map) secretClass
-                        .getDeclaredField("%3$s").get(null);
-                    java.util.UUID newUuid = (java.util.UUID) fakePlayerUuidsByKey.get(key);
-                    if (newUuid != null) {
-                      isFakePlayer = true;
-                      this.%5$s.spoofedUUID = newUuid;
-                      fakePlayerUuidsByKey.remove(key);
+                  {
+                    try {
+                      boolean isFakePlayer = false;
+                      java.util.UUID key = packet.%4$s();
+                      if (key != null) {
+                        Class secretClass = Class.forName("%2$s");
+                        java.util.Map fakePlayerUuidsByKey = (java.util.Map) secretClass
+                            .getDeclaredField("%3$s").get(null);
+                        java.util.UUID newUuid = (java.util.UUID) fakePlayerUuidsByKey.get(key);
+                        if (newUuid != null) {
+                          isFakePlayer = true;
+                          this.%5$s.spoofedUUID = newUuid;
+                          fakePlayerUuidsByKey.remove(key);
+                        }
+                      }
+                      $_ = $proceed($$) && !isFakePlayer;
+                    } catch (Exception e) {
+                      $_ = $proceed($$);
+                      org.bukkit.Bukkit.getLogger().log(
+                          java.util.logging.Level.SEVERE,
+                          "[%1$s] Error while catching fakeplayer in loginlistener!",
+                          e
+                      );
                     }
                   }
-                  $_ = $proceed($$) && !isFakePlayer;
-                } catch (Exception e) {
-                  $_ = $proceed($$);
-                  org.bukkit.Bukkit.getLogger().log(
-                      java.util.logging.Level.SEVERE,
-                      "[%1$s] Error while catching fakeplayer in loginlistener!",
-                      e
-                  );
-                }
-              }
-              """,
+                  """,
               pluginName,
               secretClasser.getSecretClassName(),
               secretClasser.getUuidsByKeyFieldName(),
