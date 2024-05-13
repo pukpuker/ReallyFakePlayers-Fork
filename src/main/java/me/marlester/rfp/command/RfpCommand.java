@@ -44,6 +44,8 @@ import revxrsal.commands.util.Either;
 @RequiredArgsConstructor(onConstructor_ = {@Inject}, access = AccessLevel.PACKAGE)
 public class RfpCommand {
 
+  // TODO: Add descriptions to all commands
+
   @Named("config")
   private final YamlDocument config;
   private final ComponentLogger logger;
