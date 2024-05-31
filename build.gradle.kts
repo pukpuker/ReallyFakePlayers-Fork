@@ -31,7 +31,7 @@ dependencies {
     paperLibrary("com.google.inject:guice:7.0.0")
     paperLibrary("com.google.inject.extensions:guice-assistedinject:7.0.0")
     paperLibrary("org.javassist:javassist:3.30.2-GA")
-    paperLibrary("net.bytebuddy:byte-buddy-agent:1.14.15")
+    paperLibrary("net.bytebuddy:byte-buddy-agent:1.14.17")
     paperLibrary("com.github.steveice10:MCProtocolLib:6214f75699")
     paperLibrary("dev.dejvokep:boosted-yaml-spigot:1.4")
     paperLibrary("xyz.jpenilla:reflection-remapper:0.1.1")
