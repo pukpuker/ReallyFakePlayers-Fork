@@ -43,6 +43,7 @@ import me.marlester.rfp.ReallyFakePlayers;
 import me.marlester.rfp.faketools.FakeLister;
 import me.marlester.rfp.listener.fakeplayerjoinlistener.FakePlayerJoinListener;
 import me.marlester.rfp.listener.fakeplayerjoinlistener.FakePlayerJoinListenerFactory;
+import me.marlester.rfp.util.ResourcePackUtils;
 import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -106,7 +107,7 @@ class FakePlayerImpl implements FakePlayer {
       @Override
       public void packetReceived(Session session, Packet packet) {
         if (packet instanceof ClientboundResourcePackPushPacket rpPacket) {
-          if (!isValidResourcePackUrl(rpPacket.getUrl())) {
+          if (!ResourcePackUtils.isValidResourcePackUrl(rpPacket.getUrl())) {
             session.send(new ServerboundResourcePackPacket(rpPacket.getId(),
                 ResourcePackStatus.INVALID_URL));
             return;
@@ -118,15 +119,6 @@ class FakePlayerImpl implements FakePlayer {
               ResourcePackStatus.DOWNLOADED));
           session.send(new ServerboundResourcePackPacket(rpPacket.getId(),
               ResourcePackStatus.SUCCESSFULLY_LOADED));
-        }
-      }
-
-      private boolean isValidResourcePackUrl(String url) {
-        try {
-          var protocol = URI.create(url).toURL().getProtocol();
-          return "http".equals(protocol) || "https".equals(protocol);
-        } catch (MalformedURLException var3) {
-          return false;
         }
       }
 
