@@ -103,7 +103,6 @@ class FakePlayerImpl implements FakePlayer {
         }
       }
 
-      // TODO move all of this outta here
       @Override
       public void packetReceived(Session session, Packet packet) {
         if (packet instanceof ClientboundResourcePackPushPacket rpPacket) {

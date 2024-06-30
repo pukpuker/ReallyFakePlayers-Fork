@@ -39,12 +39,9 @@ import revxrsal.commands.util.Either;
  * The main command of the plugin. This class is all about this command.
  */
 @Command("rfp")
-@Description("The main command of ReallyFakePlayers.")
 @CommandPermission("rfp.admin")
 @RequiredArgsConstructor(onConstructor_ = {@Inject}, access = AccessLevel.PACKAGE)
 public class RfpCommand {
-
-  // TODO: Add descriptions to all commands
 
   @Named("config")
   private final YamlDocument config;
