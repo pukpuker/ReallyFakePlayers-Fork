@@ -17,13 +17,13 @@ public class ResourcePackUtils {
    * @return true if valid, false if not.
    */
   public boolean isValidResourcePackUrl(String url) {
-    if (url.isEmpty()) {
+    if (url == null || url.isEmpty()) {
       return false;
     }
     try {
       var protocol = URI.create(url).toURL().getProtocol();
       return "http".equals(protocol) || "https".equals(protocol);
-    } catch (MalformedURLException var3) {
+    } catch (MalformedURLException | IllegalArgumentException e) {
       return false;
     }
   }
