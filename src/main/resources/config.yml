@@ -34,6 +34,8 @@ block-interaction:
 invulnerable: true
 # Fake players won't collide with other entities.
 no-collision: true
+# Ability to kick or block bots
+can-ban: false
 # Fake players won't be affected by gravity.
 no-gravity: true
 # Fake players will get an infinite invisibility effect.
