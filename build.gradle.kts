@@ -7,7 +7,7 @@ plugins {
     id("net.minecrell.plugin-yml.paper") version "0.6.0"
 }
 
-version = "3.0.8"
+version = "3.0.9"
 description = "Simulates next-level fake players on a minecraft server."
 
 repositories {
