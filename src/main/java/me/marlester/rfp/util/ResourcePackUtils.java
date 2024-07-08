@@ -17,6 +17,9 @@ public class ResourcePackUtils {
    * @return true if valid, false if not.
    */
   public boolean isValidResourcePackUrl(String url) {
+    if (url.isEmpty()) {
+      return false;
+    }
     try {
       var protocol = URI.create(url).toURL().getProtocol();
       return "http".equals(protocol) || "https".equals(protocol);
