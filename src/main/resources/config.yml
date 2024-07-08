@@ -1,6 +1,5 @@
 # MiniMessage & MiniPlaceholders supported
 # The standard time unit here is a second
-# "unset" here means that a value is set to null or simply blank
 #
 # Placeholders:
 # <rfp_fakeplayer_count>: Number of fake players
@@ -40,41 +39,41 @@ no-gravity: true
 # Fake players will get an infinite invisibility effect.
 invisibility-effect: true
 # Value should be a Location object
-# If unset, the plugin won't change the spawn location of fake players
+# If null, the plugin won't change the spawn location of fake players
 # Sets the spawn location of fake players
 # You can change this in-game with /rfp setspawn
-spawn-location:
+spawn-location: null
 # Experimental, may not work perfectly
 # Attempts to hide fake players from all other players
 hide: false
 # Commands executed when a fake player joins
 join-commands:
   # Commands that will be dispatched by the console
-  # You are able to unset this to disable this
+  # You are able to make this null to disable this
   as-console:
     - "say Greetings to <internal_player_name>!"
   # Commands that will be performed by the fake player
-  # You are able to unset this to disable this
+  # You are able to make this null to disable this
   as-fake-player:
     - "examplecommand"
 # Commands executed when a fake player quits
 quit-commands:
   # Commands that will be dispatched by the console
-  # You are able to unset this to disable this
+  # You are able to make this null to disable this
   as-console:
     - "say Goodbye, <internal_player_name>!"
   # Commands that will be performed by the fake player
-  # You are able to unset this to disable this
+  # You are able to make this null to disable this
   as-fake-player:
     - "examplecommand"
 # Value should be a string
-# If unset, the default value is assumed to be 'localhost'
+# If null, the default value is assumed to be 'localhost'
 # Custom join IP for fake players
-join-ip:
+join-ip: null
 # Value should be an integer
-# If unset, the default value is assumed to be the server's port
+# If null, the default value is assumed to be the server's port
 # Custom join port for fake players
-join-port:
+join-port: null
 # It will automatically add a fake player to the server
 # with a delay that you set beneath
 auto-join:
@@ -142,20 +141,20 @@ chatting:
   # Value should be a string list
   # You can now customize the first messages of fake players
   # First messages are the ones that they send after the first-delay is over
-  # If this is unset, it falls back to the normal messages
-  first-messages:
+  # If this is null, it falls back to the normal messages
+  first-messages: null
 # Vault integration - permissions and groups for fake players
 vault-integration:
   enable: true
   # Groups fake players will be granted
   # A random group will be chosen
-  # You are able to unset this to disable this
+  # You are able to make this null to disable this
   groups:
     - "default"
     - "vip"
     - "premium"
   # Permissions fake players will be granted
-  # You are able to unset this to disable this
+  # You are able to make this null to disable this
   permissions:
     - "example.permission"
 # Update check configuration
@@ -165,15 +164,15 @@ update-check:
   # Shall we notify staff when they join?
   notify-staff: true
   # Value should be a string
-  # If unset, the default api key will be taken
+  # If null, the default api key will be taken
   # Curseforge's API key
   # It's recommended to change the api key to yours
-  curse-api-key:
+  curse-api-key: null
   # Value should be a string
-  # If unset, the default api url will be taken
+  # If null, the default api url will be taken
   # Curseforge's API url
-  curse-api-url:
+  curse-api-url: null
   # Value should be an integer
-  # If unset, the default project id will be taken
+  # If null, the default project id will be taken
   # Curseforge's project id
-  curse-project-id:
+  curse-project-id: null
