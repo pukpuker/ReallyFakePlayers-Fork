@@ -20,15 +20,12 @@ package me.marlester.rfp.bytecodeedit;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.inject.name.Named;
-import io.papermc.paper.configuration.GlobalConfiguration;
 import java.lang.instrument.ClassDefinition;
 import javassist.ClassPool;
 import javassist.CtClass;
-import javassist.CtField;
 import javassist.CtMethod;
 import javassist.LoaderClassPath;
 import javassist.expr.ExprEditor;
-import javassist.expr.FieldAccess;
 import javassist.expr.MethodCall;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -67,30 +64,9 @@ public class LoginListenerEditor {
     ctClass.defrost(); // as this class is already loaded, javassist tries to protect it.
     CtMethod handleHello = ctClass.getDeclaredMethod(RemapUtil.HANDLE_HELLO_METHOD_NAME,
         new CtClass[] {pool.get(ServerboundHelloPacket.class.getName())});
-
-    CtField velocityEnabledField = pool.get(GlobalConfiguration.Proxies.Velocity.class.getName())
-        .getDeclaredField("enabled");
     CtMethod checkAuthMethod = pool.get(MinecraftServer.class.getName())
         .getDeclaredMethod(RemapUtil.USES_AUTH_METHOD_NAME);
     handleHello.instrument(new ExprEditor() {
-
-      @SneakyThrows
-      @Override
-      public void edit(FieldAccess fieldAccess) {
-        if (fieldAccess.getField().equals(velocityEnabledField)) {
-          String code = String.format("""
-              if (this.%1$s.spoofedUUID != null
-                  && this.velocityLoginMessageId == this.%1$s.spoofedUUID.hashCode()) {
-                $_ = false;
-              } else {
-                $_ = $proceed($$);
-              }
-              """,
-              RemapUtil.CONNECTION_FIELD_NAME);
-          fieldAccess.replace(code);
-        }
-      }
-
       @SneakyThrows
       @Override
       public void edit(MethodCall methodCall) {
@@ -111,7 +87,6 @@ public class LoginListenerEditor {
                         java.util.UUID newUuid = (java.util.UUID) fakePlayerUuidsByKey.get(key);
                         if (newUuid != null) {
                           isFakePlayer = true;
-                          this.velocityLoginMessageId = newUuid.hashCode();
                           this.%5$s.spoofedUUID = newUuid;
                           fakePlayerUuidsByKey.remove(key);
                         }
