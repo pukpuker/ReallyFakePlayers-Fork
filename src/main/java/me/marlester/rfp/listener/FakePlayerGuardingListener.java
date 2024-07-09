@@ -19,8 +19,6 @@ package me.marlester.rfp.listener;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.google.inject.name.Named;
-import dev.dejvokep.boostedyaml.YamlDocument;
 import io.papermc.paper.event.player.ChatEvent;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -42,8 +40,7 @@ import org.bukkit.event.player.PlayerPreLoginEvent;
 @RequiredArgsConstructor(onConstructor_ = {@Inject}, access = AccessLevel.PACKAGE)
 @Singleton
 public class FakePlayerGuardingListener implements Listener {
-  @Named("config")
-  private final YamlDocument config;
+
   private final FakeLister fakeLister;
 
   /**
@@ -80,7 +77,7 @@ public class FakePlayerGuardingListener implements Listener {
    */
   @EventHandler(priority = EventPriority.HIGHEST)
   public void onPlayerKick(PlayerKickEvent e) {
-    if (!e.isCancelled() && fakeLister.isFakePlayer(e.getPlayer().getUniqueId()) && !config.getBoolean("can-ban")) {
+    if (!e.isCancelled() && fakeLister.isFakePlayer(e.getPlayer().getUniqueId())) {
       e.setCancelled(true);
     }
   }
@@ -94,7 +91,7 @@ public class FakePlayerGuardingListener implements Listener {
   @EventHandler(priority = EventPriority.HIGHEST)
   public void onPlayerLogin(PlayerLoginEvent e) {
     if (!(e.getResult() == PlayerLoginEvent.Result.ALLOWED)
-            && fakeLister.isFakePlayer(e.getPlayer().getUniqueId())) {
+        && fakeLister.isFakePlayer(e.getPlayer().getUniqueId())) {
       e.allow();
     }
   }
@@ -109,7 +106,7 @@ public class FakePlayerGuardingListener implements Listener {
   @EventHandler(priority = EventPriority.HIGHEST)
   public void onPlayerPreLogin(PlayerPreLoginEvent e) {
     if (!(e.getResult() == PlayerPreLoginEvent.Result.ALLOWED)
-            && fakeLister.isFakePlayer(e.getUniqueId())) {
+        && fakeLister.isFakePlayer(e.getUniqueId())) {
       e.allow();
     }
   }
