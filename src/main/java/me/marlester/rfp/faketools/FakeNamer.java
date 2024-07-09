@@ -20,9 +20,15 @@ package me.marlester.rfp.faketools;
 import com.google.common.collect.ImmutableList;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import lombok.Getter;
+import me.marlester.rfp.config.ConfigYml;
 import me.marlester.rfp.config.NameListYml;
+import org.bukkit.BanList;
+import org.bukkit.Bukkit;
 
 /**
  * A singleton class responsible for generating fake names. This class relies on {@link FakeLister}
@@ -31,18 +37,18 @@ import me.marlester.rfp.config.NameListYml;
  */
 @Singleton
 public class FakeNamer {
-
   private final FakeLister fakeLister;
+
   @Getter
   private final ImmutableList<String> names;
 
   @Inject
-  FakeNamer(FakeLister fakeLister, NameListYml nameListYml) {
+  FakeNamer(FakeLister fakeLister, NameListYml nameListYml, ConfigYml configYml) {
     this.fakeLister = fakeLister;
-    var config = nameListYml.getConfiguration();
-    names = ImmutableList.copyOf(config.getStringList("names"));
-
-    int maxFakePlayers = config.getInt("max-fake-players");
+    var configMain = configYml.getConfiguration();
+    var configNameYml = nameListYml.getConfiguration();
+    names = ImmutableList.copyOf(configNameYml.getStringList("names"));
+    int maxFakePlayers = configMain.getInt("max-fake-players");
     if (maxFakePlayers > names.size()) {
       throw new IllegalStateException("Number of names in name-list.yml must not be less "
           + "than max-fake-players in config.yml!");
@@ -55,12 +61,21 @@ public class FakeNamer {
    *
    * @return a unique random name as a {@link String}.
    */
-  public String getRandomName() {
+  public String getRandomName(boolean can_ban) {
     var rawFakePlayersByName = fakeLister.getRawFakePlayersByName();
+    List<String> availableNames = new ArrayList<>(names);
     String name;
+
     do {
-      name = names.get(ThreadLocalRandom.current().nextInt(names.size()));
-    } while (rawFakePlayersByName.containsKey(name));
+      if (availableNames.isEmpty()) {
+        return "ALL_ACCOUNTS_HAS_BEEN_BANNED";
+      }
+      int index = ThreadLocalRandom.current().nextInt(availableNames.size());
+      name = availableNames.get(index);
+      availableNames.remove(index);
+
+    } while (rawFakePlayersByName.containsKey(name) || (can_ban && Bukkit.getBanList(BanList.Type.NAME).isBanned(name)));
+
     return name;
   }
 }

@@ -64,14 +64,21 @@ public class FakePlayerManager {
    *               sanity.
    * @see FakeNamer#getRandomName() FakeNamer's name getting procedure.
    */
-  public void addNumber(int number) {
+  public boolean addNumber(int number, boolean can_ban) {
+    boolean OK = true;
     for (int i = 0; i < number; i++) {
-      String name = fakeNamer.getRandomName();
-      add(name);
+      String name = fakeNamer.getRandomName(can_ban);
+      if (name == "ALL_ACCOUNTS_HAS_BEEN_BANNED" && can_ban) { /*Просто ебаное говно*/
+        return false;
+      }
+      else {
+        add(name);
+      }
     }
+      return true;
   }
 
-  /**
+  /**ф
    * Why keep a fake player around when you can zap 'em out of existence, right? This little method
    * does exactly that. Poof! Gone! Just like my sense of responsibility on a Friday night.
    *

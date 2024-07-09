@@ -44,6 +44,8 @@ public class AutoJoin {
    * Start auto-adding fake players.
    */
   public void startAutoJoin() {
+    var can_Ban_CFG = config.getBoolean("can-ban");
+
     if (!config.getBoolean("auto-join.enable")) {
       return;
     }
@@ -52,7 +54,7 @@ public class AutoJoin {
     scheduler.runTaskLater(pl, new Runnable() {
       @Override
       public void run() {
-        fakePlayerManager.addNumber(1);
+        fakePlayerManager.addNumber(1, can_Ban_CFG);
         int delay = 20 * ThreadLocalRandom.current().nextInt(
             config.getInt("auto-join.delay.min"),
             config.getInt("auto-join.delay.max") + 1

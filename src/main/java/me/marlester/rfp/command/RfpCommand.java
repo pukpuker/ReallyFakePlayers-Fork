@@ -99,8 +99,13 @@ public class RfpCommand {
         actor.reply("Unable to add fake players, number of fake players exceeds the maximal number"
             + " of fake players.");
       } else {
-        fakePlayerManager.addNumber(number);
-        actor.reply("Added fake players number " + number + ".");
+        var can_Ban_CFG = config.getBoolean("can-ban");
+        if (fakePlayerManager.addNumber(number, can_Ban_CFG)) {
+          actor.reply("Added fake players number " + number + ".");
+        }
+        else {
+          actor.reply("There are no more unbanned accounts.");
+        }
       }
     });
     args.ifSecond(name -> {
