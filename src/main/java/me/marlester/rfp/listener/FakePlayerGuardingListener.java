@@ -94,7 +94,7 @@ public class FakePlayerGuardingListener implements Listener {
   @EventHandler(priority = EventPriority.HIGHEST)
   public void onPlayerLogin(PlayerLoginEvent e) {
     if (!(e.getResult() == PlayerLoginEvent.Result.ALLOWED)
-        && fakeLister.isFakePlayer(e.getPlayer().getUniqueId())) {
+            && fakeLister.isFakePlayer(e.getPlayer().getUniqueId())) {
       e.allow();
     }
   }
@@ -109,7 +109,7 @@ public class FakePlayerGuardingListener implements Listener {
   @EventHandler(priority = EventPriority.HIGHEST)
   public void onPlayerPreLogin(PlayerPreLoginEvent e) {
     if (!(e.getResult() == PlayerPreLoginEvent.Result.ALLOWED)
-        && fakeLister.isFakePlayer(e.getUniqueId())) {
+            && fakeLister.isFakePlayer(e.getUniqueId())) {
       e.allow();
     }
   }
